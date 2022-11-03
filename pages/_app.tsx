@@ -1,52 +1,32 @@
-// NPM modules
-import { useState, useEffect } from "react";
-import { StyleProvider, ThemePicker } from "vcc-ui";
+// // NPM modules
+import React from "react";
+import type { AppProps } from "next/app";
+import { StyleProvider, styleRenderer, ThemePicker } from "vcc-ui";
+import { TopBar } from "components/TopBar";
 
-// Project files
-import { CarsList } from "../src/components/CarsList";
-import API from "../src/services/api";
-
-import { ICar } from "../src/interfaces/interfaces";
 import "../public/css/styles.css";
 
-const enum StatusCodes {
-  LOADING,
-  LOADED,
-  ERROR,
-}
+const renderer = styleRenderer();
 
-function HomePage() {
-  // Local state
-  const [status, setStatus] = useState(StatusCodes.LOADING);
-  const [cars, setCars] = useState(Array<ICar>());
+renderer.renderStatic(
+  {
+    margin: 0,
+    padding: 0,
+  },
+  "body"
+);
 
-  useEffect(() => {
-    // API.getData(
-    //   (data: ICar[]) => {
-    //     setCars(data);
-    //     setStatus(StatusCodes.LOADED);
-    //   },
-    //   (error: Error) => {
-    //     setStatus(StatusCodes.ERROR);
-    //     console.error(error);
-    //   }
-    // );
-    setStatus(StatusCodes.LOADING);
-    fetch("api/cars.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setCars(data);
-        setStatus(StatusCodes.LOADED);
-      });
-  }, []);
-
+function App({ Component, pageProps }: AppProps) {
   return (
-    <StyleProvider>
-      <ThemePicker variant="light">
-        {status === StatusCodes.LOADED && <CarsList items={cars} />}
-      </ThemePicker>
-    </StyleProvider>
+    <React.StrictMode>
+      <StyleProvider>
+        <ThemePicker variant="light">
+          <TopBar />
+          <Component {...pageProps} />
+        </ThemePicker>
+      </StyleProvider>
+    </React.StrictMode>
   );
 }
 
-export default HomePage;
+export default App;

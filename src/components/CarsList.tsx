@@ -6,7 +6,6 @@ type iProps = {
   items: ICar[];
 };
 export const CarsList: React.FC<iProps> = ({ items }: iProps) => {
-  console.log(items);
   return (
     <Block extend={{ padding: 20 }}>
       <Button>Click me!</Button>

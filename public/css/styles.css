@@ -1,4 +1,16 @@
-body {
-  background: steelblue;
-  color: white;
+.use-spring-carousel-thumbs-wrapper {
+  margin-top: 30px;
+  justify-content: center;
+  gap: 10px;
+}
+
+.thumb-item > div {
+  width: 8px;
+  height: 8px;
+  background-color: #ebebeb;
+  border-radius: 50%;
+}
+
+.thumb-item > .active {
+  background-color: #1c6bba;
 }
