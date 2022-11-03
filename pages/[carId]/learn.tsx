@@ -1,18 +1,15 @@
 import { FC } from "react";
-import { Block, Text } from "vcc-ui";
-import { useRouter } from "next/router";
+import { Block } from "vcc-ui";
+
+import { ComingSoon } from "components/ComingSoon";
+import { BackButton } from "components/BackButton";
 
 const LearnPage: FC = () => {
-  const router = useRouter();
-  console.log("router", router);
-  const { carId } = router.query;
-
   return (
-    <>
-      <Block>
-        <Text>Learn more</Text>
-      </Block>
-    </>
+    <Block extend={{ marginLeft: 20, marginRight: 20 }}>
+      <BackButton />
+      <ComingSoon />
+    </Block>
   );
 };
 

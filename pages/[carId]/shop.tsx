@@ -1,10 +1,14 @@
 import { FC } from "react";
-import { Block, Text } from "vcc-ui";
+import { Block } from "vcc-ui";
+
+import { ComingSoon } from "components/ComingSoon";
+import { BackButton } from "components/BackButton";
 
 const ShopPage: FC = () => {
   return (
-    <Block>
-      <Text>Buy a car</Text>
+    <Block extend={{ marginLeft: 20, marginRight: 20 }}>
+      <BackButton />
+      <ComingSoon />
     </Block>
   );
 };

@@ -19,7 +19,7 @@ renderer.renderStatic(
 function App({ Component, pageProps }: AppProps) {
   return (
     <React.StrictMode>
-      <StyleProvider>
+      <StyleProvider renderer={renderer}>
         <ThemePicker variant="light">
           <TopBar />
           <Component {...pageProps} />

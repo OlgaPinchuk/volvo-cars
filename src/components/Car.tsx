@@ -67,7 +67,7 @@ export const Car: FC<iProps> = ({ details }: iProps) => {
             aspectRatio: "4 / 3",
           }}
         >
-          <Image src={imageUrl} alt={modelName} layout="fill" />
+          <Image src={imageUrl} alt={modelName} layout="fill" priority={true} />
         </Block>
       </View>
       <View
