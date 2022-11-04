@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Block, LoadingBar, Message } from "vcc-ui";
 
 import { ICar } from "../src/interfaces/interfaces";
-import { CarsCarousel } from "../src/components/CarsCarousel";
+import { CarsList } from "../src/components/CarsList";
 
 const enum StatusCodes {
   LOADING,
@@ -17,7 +17,7 @@ function HomePage() {
 
   useEffect(() => {
     setStatus(StatusCodes.LOADING);
-    fetch("api/car.json")
+    fetch("api/cars.json")
       .then((res) => res.json())
       .then((data) => {
         setCars(data);
@@ -39,7 +39,7 @@ function HomePage() {
       </Block>
     );
 
-  return <CarsCarousel items={cars} />;
+  return <CarsList items={cars} />;
 }
 
 export default HomePage;
