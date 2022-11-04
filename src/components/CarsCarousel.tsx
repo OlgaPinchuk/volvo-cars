@@ -43,7 +43,7 @@ export const CarsCarousel: FC<iProps> = ({ items }: iProps) => {
     <Block
       extend={{
         maxWidth: "80vw",
-        margin: "5vw 13vw",
+        margin: "5vh 13vw",
         width: "max-content",
         overflow: "hidden",
       }}
