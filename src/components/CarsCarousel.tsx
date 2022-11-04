@@ -11,7 +11,7 @@ type iProps = {
 };
 
 export const CarsCarousel: FC<iProps> = ({ items }: iProps) => {
-  const [activeItem, setActiveItem] = useState(0);
+  const [activeItem, setActiveItem] = useState<number>(0);
 
   const {
     carouselFragment,
