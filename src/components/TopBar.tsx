@@ -1,16 +1,17 @@
 import { FC } from "react";
-import { Block, Text } from "vcc-ui";
+import { Block, Text, useTheme } from "vcc-ui";
 
 export const TopBar: FC = () => {
-  const style = ({ theme }) => ({
-    padding: "20px 0",
-    marginBottom: "50px",
-    textAlign: "center",
-    background: theme.color.background.secondary,
-  });
-
+  const theme = useTheme();
   return (
-    <Block extend={style}>
+    <Block
+      extend={{
+        padding: "20px 0",
+        marginBottom: "50px",
+        textAlign: "center",
+        background: theme.color.background.secondary,
+      }}
+    >
       <Text variant="cook">Volvo Assignment</Text>
     </Block>
   );
