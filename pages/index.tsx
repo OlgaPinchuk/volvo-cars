@@ -11,7 +11,7 @@ function HomePage() {
   if (status === StatusCodes.LOADING) {
     return <LoadingBar isLoading />;
   }
-  if (status === StatusCodes.ERROR) {
+  if (status === StatusCodes.ERROR || !cars) {
     return (
       <Block extend={{ textAlign: "center" }}>
         <Message type="error">
@@ -21,7 +21,7 @@ function HomePage() {
     );
   }
 
-  return <CarsList items={cars} />;
+  return <CarsList items={cars!} />;
 }
 
 export default HomePage;
