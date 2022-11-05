@@ -17,7 +17,7 @@ const useFetch = <T>(url: string) => {
         setStatus(StatusCodes.ERROR);
         console.log(error);
       });
-  }, []);
+  }, [url]);
   return [data, status] as const;
 };
 
