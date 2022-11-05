@@ -2,16 +2,15 @@ import { FC } from "react";
 import { Block, Link, Text, View, useTheme } from "vcc-ui";
 import Image from "next/image";
 
-import { ICar } from "../interfaces/interfaces";
+import { ICar } from "../types/types";
 
 type iProps = {
   details: ICar;
-  key?: string;
 };
 
 export const Car: FC<iProps> = ({ details }: iProps) => {
   const theme = useTheme();
-  const { id, modelName, imageUrl, bodyType, modelType } = details;
+  const { id: carId, modelName, imageUrl, bodyType, modelType } = details;
   return (
     <View>
       <View
@@ -46,7 +45,6 @@ export const Car: FC<iProps> = ({ details }: iProps) => {
               extend={{ marginRight: 4 }}
               variant="columbus"
               subStyle="emphasis"
-              aria-label="car name"
             >
               {modelName}
             </Text>
@@ -85,7 +83,7 @@ export const Car: FC<iProps> = ({ details }: iProps) => {
               paddingBottom: 8,
               textTransform: "uppercase",
             }}
-            href={`/${id}/learn`}
+            href={`/${carId}/learn`}
             arrow="right"
           >
             LEARN
@@ -98,7 +96,7 @@ export const Car: FC<iProps> = ({ details }: iProps) => {
               paddingBottom: 8,
               textTransform: "uppercase",
             }}
-            href={`/${id}/shop`}
+            href={`/${carId}/shop`}
             arrow="right"
           >
             SHOP

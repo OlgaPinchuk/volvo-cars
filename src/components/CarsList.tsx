@@ -2,7 +2,7 @@ import { FC, useState, useMemo } from "react";
 
 import { Filter } from "./Filter";
 import { CarsCarousel } from "./CarsCarousel";
-import { ICar } from "../interfaces/interfaces";
+import { ICar } from "../types/types";
 
 type iProps = {
   items: ICar[];

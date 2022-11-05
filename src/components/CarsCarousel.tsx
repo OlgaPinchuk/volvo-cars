@@ -1,10 +1,10 @@
 import { FC, useState } from "react";
-import { Flex, Block, View, Spacer, Click } from "vcc-ui";
 import Image from "next/image";
+import { Flex, Block, View, Spacer, Click } from "vcc-ui";
 import { useSpringCarousel } from "react-spring-carousel";
 
 import { Car } from "./Car";
-import { ICar } from "../interfaces/interfaces";
+import { ICar } from "../types/types";
 
 type iProps = {
   items: ICar[];
@@ -73,9 +73,6 @@ export const CarsCarousel: FC<iProps> = ({ items }: iProps) => {
           onClick={slideToPrevItem}
           disabled={activeItem === 0}
           type="button"
-          style={{
-            cursor: "auto",
-          }}
         >
           <Image
             src="/images/icons/chevron-circled.svg"
@@ -90,9 +87,6 @@ export const CarsCarousel: FC<iProps> = ({ items }: iProps) => {
         </Click>
         <Spacer />
         <Click
-          style={{
-            cursor: "auto",
-          }}
           type="button"
           onClick={slideToNextItem}
           disabled={activeItem === items.length - 1}

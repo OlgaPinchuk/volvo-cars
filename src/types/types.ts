@@ -5,3 +5,9 @@ export interface ICar {
   modelType: number;
   imageUrl: string;
 }
+
+export const enum StatusCodes {
+  LOADING,
+  LOADED,
+  ERROR,
+}

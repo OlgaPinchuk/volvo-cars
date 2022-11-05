@@ -6,13 +6,11 @@ export const BackButton: FC = () => {
   const router = useRouter();
 
   return (
-    <>
-      <IconButton
-        aria-label="Navigate back"
-        iconName="navigation-chevronback"
-        onClick={() => router.back()}
-        variant="outline"
-      />
-    </>
+    <IconButton
+      aria-label="Navigate back"
+      iconName="navigation-chevronback"
+      onClick={() => router.back()}
+      variant="outline"
+    />
   );
 };

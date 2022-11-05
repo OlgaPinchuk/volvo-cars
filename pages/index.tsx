@@ -1,23 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Block, LoadingBar, Message } from "vcc-ui";
 
-import { ICar } from "../src/interfaces/interfaces";
+import { ICar, StatusCodes } from "types/types";
 import { CarsList } from "../src/components/CarsList";
-
-const enum StatusCodes {
-  LOADING,
-  LOADED,
-  ERROR,
-}
 
 function HomePage() {
   // Local state
   const [status, setStatus] = useState(StatusCodes.LOADING);
   const [cars, setCars] = useState(Array<ICar>());
 
+  const ENDPOINT = "api/cars.json";
+
   useEffect(() => {
     setStatus(StatusCodes.LOADING);
-    fetch("api/cars.json")
+    fetch(ENDPOINT)
       .then((res) => res.json())
       .then((data) => {
         setCars(data);
