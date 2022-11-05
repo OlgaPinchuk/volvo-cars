@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Block, LoadingBar, Message } from "vcc-ui";
 
 import { ICar, StatusCodes } from "types/types";
