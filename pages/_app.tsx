@@ -1,9 +1,8 @@
-// // NPM modules
 import React from "react";
 import type { AppProps } from "next/app";
 import { StyleProvider, styleRenderer, ThemePicker } from "vcc-ui";
-import { TopBar } from "components/TopBar";
 
+import { TopBar } from "components/TopBar";
 import "../public/css/styles.css";
 
 const renderer = styleRenderer();
@@ -16,7 +15,7 @@ renderer.renderStatic(
   "body"
 );
 
-function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <React.StrictMode>
       <StyleProvider renderer={renderer}>
@@ -27,6 +26,6 @@ function App({ Component, pageProps }: AppProps) {
       </StyleProvider>
     </React.StrictMode>
   );
-}
+};
 
 export default App;

@@ -1,12 +1,12 @@
 import { Block, LoadingBar, Message } from "vcc-ui";
 
-import { ICar, StatusCodes } from "types/types";
-import { CarsList } from "../src/components/CarsList";
+import { CarsList } from "components/CarsList";
 import useFetch from "hooks/useFetch";
+import { ICar, StatusCodes } from "types/types";
 
-function HomePage() {
-  const ENDPOINT = "api/cars.json";
-  const [cars, status] = useFetch<ICar>(ENDPOINT);
+const HomePage = () => {
+  const API_URL = "api/cars.json";
+  const [cars, status] = useFetch<ICar>(API_URL);
 
   if (status === StatusCodes.LOADING) {
     return <LoadingBar isLoading />;
@@ -22,6 +22,6 @@ function HomePage() {
   }
 
   return <CarsList items={cars!} />;
-}
+};
 
 export default HomePage;

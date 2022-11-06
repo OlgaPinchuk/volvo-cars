@@ -4,7 +4,7 @@ import { Flex, Block, View, Spacer, Click } from "vcc-ui";
 import { useSpringCarousel } from "react-spring-carousel";
 
 import { Car } from "./Car";
-import { ICar } from "../types/types";
+import { ICar } from "types/types";
 
 type iProps = {
   items: ICar[];
@@ -52,7 +52,7 @@ export const CarsCarousel: FC<iProps> = ({ items }: iProps) => {
       <View
         extend={{
           display: "none",
-          "@media (max-width: 480px)": {
+          untilM: {
             display: "flex",
           },
         }}
@@ -64,7 +64,7 @@ export const CarsCarousel: FC<iProps> = ({ items }: iProps) => {
           marginTop: 16,
           flexDirection: "row",
           justifyContent: "flex-end",
-          "@media (max-width: 480px)": {
+          untilM: {
             display: "none",
           },
         }}

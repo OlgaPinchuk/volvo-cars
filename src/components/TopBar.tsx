@@ -3,6 +3,7 @@ import { Block, Text, useTheme } from "vcc-ui";
 
 export const TopBar: FC = () => {
   const theme = useTheme();
+
   return (
     <Block
       extend={{

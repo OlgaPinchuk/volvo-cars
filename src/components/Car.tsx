@@ -11,11 +11,12 @@ type iProps = {
 export const Car: FC<iProps> = ({ details }: iProps) => {
   const theme = useTheme();
   const { id: carId, modelName, imageUrl, bodyType, modelType } = details;
+
   return (
     <View>
       <View
         extend={{
-          backgroundColor: theme.color.background.primary,
+          background: theme.color.background.primary,
           width: {
             default: "60vw",
             fromM: 380,
