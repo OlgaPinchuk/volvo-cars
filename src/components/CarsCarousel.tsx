@@ -73,6 +73,7 @@ export const CarsCarousel: FC<iProps> = ({ items }: iProps) => {
           onClick={slideToPrevItem}
           disabled={activeItem === 0}
           type="button"
+          aria-label="Previous Slide"
         >
           <Image
             src="/images/icons/chevron-circled.svg"
@@ -88,6 +89,7 @@ export const CarsCarousel: FC<iProps> = ({ items }: iProps) => {
         <Spacer />
         <Click
           type="button"
+          aria-label="Next Slide"
           onClick={slideToNextItem}
           disabled={activeItem === items.length - 1}
         >

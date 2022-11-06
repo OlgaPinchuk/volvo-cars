@@ -17,10 +17,8 @@ export const Car: FC<iProps> = ({ details }: iProps) => {
       <View
         extend={{
           background: theme.color.background.primary,
-          width: {
-            default: "60vw",
-            fromM: 380,
-          },
+          width: "60vw",
+          fromM: { width: 380 },
         }}
       >
         <View extend={{ paddingBottom: 15, gap: 10, flexGrow: 1 }}>
